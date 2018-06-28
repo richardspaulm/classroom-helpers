@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Penmanship Practice - Classroom Helpers</title>
+<link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<style type="text/css" media="print">
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+}
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<ul id="navbar">
+  <li><a href="teachingtools.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tools</a>
+    <div class="dropdown-content">
+      <a href="bingoPage.html">Bingo Maker</a>
+      <a href="wordSearch.html">Word Search</a>
+      <a href="anagrams.html">Anagrams</a>
+      <a href="crossword.html">Crossword Puzzle</a>
+      <a href="penmanship.html">Penmanship Practice</a>
+    </div>
+  </li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Apps</a>
+    <div class="dropdown-content">
+      <a href="#">Easy Grader</a>
+    </div>
+  </li>
+  <li><a href="#resources">Other Resources</a>
+</ul>
+
+<div id="getStartedTools">
+	<h1 id="mainHeader">Custom Penmanship Worksheets</h1>
+	<h3 id="subHeader">Help your students improve their handwriting with focused practice, and relevant vocabulary.</h3>
+	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+</div>
+<div class="toolContainer">  <form id="wordSearchForm">
+  <h2 class="toolSetting">Title</h2>
+   <p class="toolSetting">The name of your puzzle! Default is "Penmanship!"</p>
+   <input id="bingoTitle"/>
+   <h2 class="toolSetting">Size</h2>
+   <p class="toolSetting">How fast are your students? Or how much time do you have to kill?</p>
+        <select id = "sizeSelect" class="toolSetting" onchange="onSizeChanged()">
+      <option selected value="15">15 Lines</option>
+      <option value="30">30 Lines</option>
+     </select>
+  <div id="entryDiv"></div>
+</form>
+  <button id="wordSearchButton">Create</button>
+<div id="toolInstructions">
+  <h1>How To Use</h1>
+  <h3>Enter A Title</h3>
+  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for the penmanship sheets is "Penmanship!"</p>
+  <h3>Size</h3>
+  <p>The size will determine how many lines are generated on your paper. 10 lines will be long lines that span the full width of the page (best for sentences), while selecting 20 lines will divide
+   the sheet into two columns of lines (best for single words).</p>
+  <h3>Entering Words</h3>
+  <p>The lines on the form represent where they will appear on the paper. To allow students a blank line to copy a word or sentence, just leave it blank!</p>
+     <div id="instructionButton" onclick="HideInstructions()">Close</div>
+</div>
+<div id="printable"></div>
+<script src="js/penmanshipScript.js"></script>
+</body>
+</html>

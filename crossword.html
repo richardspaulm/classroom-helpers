@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crossword Puzzle Maker - Classroom Helpers</title>
+<link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<style type="text/css" media="print">
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+}
+</style>
+</head>
+<body>
+
+<ul id="navbar">
+  <li><a href="teachingtools.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tools</a>
+    <div class="dropdown-content">
+      <a href="bingoPage.html">Bingo Maker</a>
+      <a href="wordSearch.html">Word Search</a>
+      <a href="anagrams.html">Anagrams</a>
+      <a href="crossword.html">Crossword Puzzle</a>
+      <a href="penmanship.html">Penmanship Practice</a>
+    </div>
+  </li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Apps</a>
+    <div class="dropdown-content">
+      <a href="#">Easy Grader</a>
+    </div>
+  </li>
+  <li><a href="#resources">Other Resources</a>
+</ul>
+
+<div id="getStartedTools">
+	<h1 id="mainHeader">Crossword Puzzle Maker</h1>
+	<h3 id="subHeader">Create a custom crossword based on your class' vocabulary! Create puzzles with hints and words special to your own class and students</h3>
+	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+</div>
+<div class="toolContainer">
+  <form id="crosswordForm">
+    <h2 class="toolSetting">Title</h2>
+    <p class="toolSetting">The name of your puzzle! Default is "Crossword Puzzle"</p>
+    <input id="bingoTitle"/>
+    <h2 class="toolSetting">Size</h2>
+      <div id="sizeSetting">
+        <h3 id="sizeText"> Current Size: </h3>
+        <button id="decreaseSize" onclick="return DecreaseForm()"> - </button>
+        <table id="sizeTable">
+          <tr>
+            <td id="size1"></td>
+            <td id="size2"></td>
+            <td id="size3"></td>
+            <td id="size4"></td>
+            <td id="size5"></td>
+          </tr>
+        </table>
+        <button id="increaseSize" onclick="return IncreaseForm()"> + </button>
+      </div>
+      <div id="entryDiv"></div>
+      <h1 class="toolSetting">Clues</h1>
+      <div class="toolSetting" id="clues">
+        <div id="vertical">
+          <h3>Vertical</h3>
+          <div id="verticalClueGroup">
+            <div id="hint">
+              <p>1</p>
+              <textarea id= "verticalClue"></textarea>
+            </div>
+          </div>
+          <button id="newVertical" onclick="return NewVerticalClue()">Add Clue</button>
+        </div>
+        <div id="horizontal">
+          <h3>Horizontal</h3>
+          <div id="horizontalClueGroup">
+            <div id="hint">
+              <p>1</p>
+              <textarea id="horizontalClue"></textarea>
+            </div>
+          </div>
+          <button id="newHorizontal" onclick="return NewHorizontalClue()">Add Clue</button>
+        </div>
+      </div>
+  </form>
+  <button id="bingoButton" onclick = "PrintCrossword()">Create Puzzle</button>
+</div>
+<div id="toolInstructions">
+  <h1>How To Use</h1>
+  <h3>Enter A Title</h3>
+  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for the crossword puzzles is "Crossword Puzzle!"</p>
+  <h3>Size</h3>
+  <p>To increase the potential size of the puzzle (subsequently decreasing the size of the boxes on your page), click the plus button. The minus button will decrement the size.</p>
+  <h3>Filing In Slots</h3>
+  <p>Typing a character in each square will change the background color on the form page, showing which squares will be drawn on the puzzle itself. The letters will not be included 
+  in the generated page.</p>
+  <h3>Placing Numbers</h3>
+  <p>To place a number in a square for its' corresponding clue, click the square in the top-left on the input. Each click will increment the number contained by one, and will reset after 9.
+     If you want to create puzzles with even more than nine words in each direction, shoot me an email and we will make it happen! (Check the contact page)</p>
+  <div id="instructionButton" onclick="HideInstructions()">Close</div>
+</div>
+<div id="printable"></div>
+<script src="js/crosswordScript.js"></script>
+</body>
+</html>

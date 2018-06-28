@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bingo Maker - Classroom Helpers</title>
+<link id = "styles" rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style type="text/css" media="print">
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+}
+</style>
+</head>
+<body>
+
+<ul id="navbar">
+  <li><a href="teachingtools.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tools</a>
+    <div class="dropdown-content">
+      <a href="bingoPage.html">Bingo Maker</a>
+      <a href="wordSearch.html">Word Search</a>
+      <a href="anagrams.html">Anagrams</a>
+      <a href="crossword.html">Crossword Puzzle</a>
+      <a href="penmanship.html">Penmanship Practice</a>
+    </div>
+  </li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Apps</a>
+    <div class="dropdown-content">
+      <a href="#">Easy Grader</a>
+    </div>
+  </li>
+  <li><a href="#resources">Other Resources</a>
+</ul>
+<div id="getStartedTools">
+	<h1 id="mainHeader"> Bingo Board Maker</h1>
+	<h3 id="subHeader">Create a randomized, unique board for each of your students!</h3>
+	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+</div>
+<div class="toolContainer">
+  <form  id="bingoForm">
+  <h2 class="toolSetting">Title</h2>
+  <p class="toolSetting">The name of your puzzle! Default is "Bingo!"</p>
+  <input id="bingoTitle"/>
+  <h2 class="toolSetting">Word Entry</h2>
+  <p class="toolSetting">Enter 24 or more words seperated by commas or spaces! 24 words from your list will be placed randomly on each students puzzle:</p>
+  <textarea id ="bingoInput"></textarea>
+    <h2 class="toolSetting">Random or Blank Template?</h2>
+     <p class="toolSetting">Random will create 1 board per student, each different than the other, while a blank template 
+     will generate an empty board with your word list at the bottom for your students to place on their own</p> 
+     <select id = "wordSearchRandSelect" class="toolSetting" onchange="onSelectChanged()">
+      <option value="random">Random</option>
+      <option value="identical">Blank Template</option>
+     </select>
+  <div id="randomDivBingo" class="toolSetting">
+    <h2>Number of Students</h2>
+    <input type="number" id="bingoStudents"/>
+  </div>
+</form>
+<button id="bingoButton" onclick="sendToRand()">Create Random Boards</button>
+</div>
+<div id="toolInstructions">
+  <h1>How To Use</h1>
+  <h3>Enter A Title</h3>
+  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for bingo boards is "Bingo!"</p>
+  <h3>Entering Words</h3>
+  <p>If you want customized boards for each student enter at least 24 words in the second box, either separated by commas or place each word on a new line. If you enter more than
+    24 words, all of the words you enter will be displayed at the list on the bottom of the paper, and the program will randomly select and place 24 words on each board.</p>
+  <h3>Random or Blank</h3>
+  <p>Random will create a board for each of your students, but the blank boards option will generate a paper with empty blocks and a full word list at the bottom, for your students
+     to choose and place.</p>
+     <div id="instructionButton" onclick="HideInstructions()">Close</div>
+</div>
+<div id="printable"></div>
+<script src="js/bingoScript.js"></script>
+</body>
+</html>

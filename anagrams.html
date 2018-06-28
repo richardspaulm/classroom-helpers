@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Anagram Maker - Classroom Helpers</title>
+<link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<style type="text/css" media="print">
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+    
+}
+</style>
+</head>
+<body>
+
+<ul id="navbar">
+  <li><a href="teachingtools.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tools</a>
+    <div class="dropdown-content">
+      <a href="bingoPage.html">Bingo Maker</a>
+      <a href="wordSearch.html">Word Search</a>
+      <a href="anagrams.html">Anagrams</a>
+      <a href="crossword.html">Crossword Puzzle</a>
+      <a href="penmanship.html">Penmanship Practice</a>
+    </div>
+  </li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Apps</a>
+    <div class="dropdown-content">
+      <a href="#">Easy Grader</a>
+    </div>
+  </li>
+  <li><a href="#resources">Other Resources</a>
+</ul>
+
+<div id="getStartedTools">
+	<h1 id="mainHeader"> Anagram Maker</h1>
+	<h3 id="subHeader">Make your students think about spelling structure while racing to solve your puzzle! Have them decode single words, or a whole sentence of your choosing</h3>
+	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+</div>
+<div class="toolContainer">  <form id="wordSearchForm">
+  <h2 class="toolSetting">Title</h2>
+   <p class="toolSetting">The name of your puzzle! Default is "Anagrams!"</p>
+   <input id="bingoTitle"/>
+  <h2 class="toolSetting">Word Entry</h2>
+   <p class="toolSetting">Enter at least as many words as you would like to appear on your page! If you enter more words than your selected size, they will be randomly chosen.</p>
+   <textarea id ="bingoInput"></textarea>
+   <h2 class="toolSetting">Size</h2>
+   <p class="toolSetting">How fast are your students? Or how much time do you have to kill?</p>
+        <select id = "anagramSizeSelect" class="toolSetting" onchange="onSizeChanged()">
+      <option value="6">6 Words</option>
+      <option selected value="8">8 Words</option>
+      <option value="10">10 Words</option>
+      <option value="12">12 Words</option>
+     </select>
+    <h2 class="toolSetting">Identical or Random?</h2>
+     <p class="toolSetting">Worried your students might cheat? Choose random and each one of your students will get custom anagrams, and even different words if you inlcude more than the selected size in your words list. Identical will generate only one page, which you can print as many copies as needed.</p>
+     <select id = "anagramRandSelect" class="toolSetting" onchange="onSelectChanged()">
+      <option value="identical">Identical</option>
+      <option value="random">Random</option>
+     </select>
+  <div id="randomDiv" class="toolSetting">
+    <h2>Number of Students</h2>
+    <input id="bingoStudents"/>
+  </div>
+</form>
+  <button class="toolSetting" id="wordSearchButton">Create</button>
+<div id="toolInstructions">
+  <h1>How To Use</h1>
+  <h3>Enter A Title</h3>
+  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for the anagram sheets is "Anagrams!"</p>
+  <h3>Word Entry</h3>
+  <p>Enter the words you would like placed into your paper below! Separate each word either with a comma, or by placing it on a new line and your words will be
+   randomly jumbled and placed on the paper.</p>
+  <h3>Size</h3>
+  <p>How many words would you like on each paper? Fewer words allows more space to draw at the bottom.</p>
+  <h3>Identical or Random</h3>
+  <p>Identical will generate one sheet, which you can print as many copies as you like for your class. Random will generate a unique page for each student
+  , with potentially different words placed in different positions for each student. (Best for ensuring your students are finding the solutions on their own!) If you've entered more
+   more words than the selected page size, words will be randomly chosen from the list.</p>
+     <div id="instructionButton" onclick="HideInstructions()">Close</div>
+</div>
+<div id="printable"></div>
+<script src="js/anagramScript.js"></script>
+</body>
+</html>

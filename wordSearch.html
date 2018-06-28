@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Word Search Maker - Classroom Helpers</title>
+<link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<style type="text/css" media="print">
+@page {
+    size: auto;   /* auto is the initial value */
+    margin: 0;  /* this affects the margin in the printer settings */
+}
+</style>
+
+</head>
+<body>
+
+<ul id="navbar">
+  <li><a href="teachingtools.html">Home</a></li>
+  <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Tools</a>
+    <div class="dropdown-content">
+      <a href="bingoPage.html">Bingo Maker</a>
+      <a href="wordSearch.html">Word Search</a>
+      <a href="anagrams.html">Anagrams</a>
+      <a href="crossword.html">Crossword Puzzle</a>
+      <a href="penmanship.html">Penmanship Practice</a>
+    </div>
+  </li>
+    <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">Apps</a>
+    <div class="dropdown-content">
+      <a href="#">Easy Grader</a>
+    </div>
+  </li>
+  <li><a href="#resources">Other Resources</a>
+</ul>
+
+<div id="getStartedTools">
+	<h1 id="mainHeader"> Word Search Maker</h1>
+	<h3 id="subHeader">Create a custom word search based on your class' vocabulary! Generate the same puzzle for each student, or go every student for themselves with a unique, randomized puzzle for each!</h3>
+	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+</div>
+
+<div class="toolContainer">
+  <form id="wordSearchForm">
+  <h2 class="toolSetting">Title</h2>
+   <p class="toolSetting">The name of your puzzle! Default is "Word Search"</p>
+   <input id="bingoTitle"/>
+  <h2 class="toolSetting">Word Entry</h2>
+   <p class="toolSetting">Enter 24 or more words seperated by commas or spaces! 24 words from your list will be placed randomly on each students puzzle:</p>
+   <textarea id ="bingoInput"></textarea>
+   <h2 class="toolSetting">Size</h2>
+   <p class="toolSetting">The width and height of your puzzle! Shaped puzzles to come in the future!</p>
+        <select id = "wordSearchSizeSelect" class="toolSetting" onchange="onSizeChanged()">
+      <option value="10">10x10</option>
+      <option selected value="15">15x15</option>
+      <option value="20">20x20</option>
+      <option value="25">25x25</option>
+      <option value="30">30x30</option>
+     </select>
+    <h2 class="toolSetting">Identical or Random?</h2>
+     <p class="toolSetting">Identical will create 1 board, which you can print as many copies of as you like! Random will create a unique board for each student in your class, with
+                          the words scattered throughout</p>
+     <select id = "wordSearchRandSelect" class="toolSetting" onchange="onSelectChanged()">
+      <option value="identical">Identical</option>
+      <option value="random">Random</option>
+     </select>
+  <div id="randomDiv" class="toolSetting">
+    <h2>Number of Students</h2>
+    <input id="bingoStudents"/>
+  </div>
+</form>
+  <button id="wordSearchButton" onclick="CreatePuzzle()">Create</button>
+<div id="toolInstructions">
+  <h1>How To Use</h1>
+  <h3>Enter A Title</h3>
+  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for the word search sheets is "Word Search!"</p>
+  <h3>Word Entry</h3>
+  <p>Enter the words you would like placed into your puzzle below! Separate each word either with a comma, or by placing it on a new line and your words will be
+   randomly placed around your puzzle vertically, horizontally, and diagonally. If a word is too long to find a spot that fits or there are too many words already, it may remove that word from
+  the puzzle and the word list.</p>
+  <h3>Size</h3>
+  <p>The size is the dimensions of the puzzle. For a large word list a larger size is reccomended, which will also increase the difficulty significantly. As the puzzle scales upward in size, 
+  the letters shrink in size.</p>
+  <h3>Identical or Random</h3>
+  <p>Identical will generate one word search, which you can print as many copies as you like for your class. Random will generate a unique board for each student
+  , with words placed in different positions for each student. (Best for ensuring your students are finding the solutions on their own!)</p>
+     <div id="instructionButton" onclick="HideInstructions()">Close</div>
+</div>
+<div id="printable"></div>
+<script src="js/wordSearchScript.js"></script>
+</body>
+</html>
