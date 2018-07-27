@@ -48,7 +48,7 @@
 <div id="getStartedTools">
 	<h1 id="mainHeader"> Anagram Maker</h1>
 	<h3 id="subHeader">Make your students think about spelling structure while racing to solve your puzzle! Have them decode single words, or a whole sentence of your choosing</h3>
-	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+	<div id="scrollButtonTools">Instructions</div>
 </div>
 <div class="container" id="formContainer">
     <h1>Anagrams Worksheets</h1>
@@ -71,7 +71,7 @@
       <p>Your word list. If more words are selected than entered, they will be randomly chosen.</p><p> Current list: <span id="wordCount">0</span> words.</p>
     </div>
   </div>
-  <textarea id="bingoInput" oninput="CountWords()"></textarea>
+  <textarea id="bingoInput"></textarea>
   <div class="row" id="borderRow">
     <div class="col-sm-1">
       <h2>Size: </h2>
@@ -82,7 +82,7 @@
       </p>
     </div>
   </div>
-  <select id="wordSearchSizeSelect" onchange="onSizeChanged()">
+  <select id="wordSearchSizeSelect">
     <option value="6">6 Words</option>
     <option value="8" selected>8 Words</option>
     <option value="10">10 Words</option>
@@ -101,13 +101,13 @@
   <div class="row">
     <div class="col-sm-4">
       <label class="radioLabel">Random Boards
-      <input type="radio" name="check" onclick="handleClick(this)" value="random" id="randomRadio" checked>
+      <input type="radio" name="check" value="random" id="randomRadio" checked>
       <span class="checkmark"></span>
     </label>
     </div>
     <div class="col-sm-4">
       <label class="radioLabel">Identical
-      <input type="radio" name="check" onclick="handleClick(this)" value="blank" id="blankRadio">
+      <input type="radio" name="check" value="blank" id="blankRadio">
       <span class="checkmark"></span>
     </label>
     </div>
@@ -118,7 +118,7 @@
       <input id="bingoStudents" type="number"/>
     </div>
   </div>
-  <button id="printButton" onclick="RandomGrams()">Print Boards</button>
+  <button id="printButton">Print Boards</button>
 </div>
 </div>
 <div id="toolInstructions">
@@ -134,7 +134,7 @@
   <p>Identical will generate one sheet, which you can print as many copies as you like for your class. Random will generate a unique page for each student
   , with potentially different words placed in different positions for each student. (Best for ensuring your students are finding the solutions on their own!) If you've entered more
    more words than the selected page size, words will be randomly chosen from the list.</p>
-     <div id="instructionButton" onclick="HideInstructions()">Close</div>
+     <div id="instructionButton">Close</div>
 </div>
 <!--Footer-->
 <div class="container-fluid" id="footer">
@@ -197,6 +197,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-<script src="js/anagramScript.js"></script>
+<script src="js/anagramQuery.js"></script>
 </body>
 </html>

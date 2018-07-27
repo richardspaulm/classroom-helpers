@@ -469,6 +469,10 @@ h1
     height: 325mm;
     overflow: hidden;
 }
+#randomPrintable{
+    height: 325mm;
+    overflow: hidden;
+}
 #bigWordList{
     font-size: 20px;
     margin: 20px;
@@ -522,7 +526,7 @@ h1
     margin: 20px 5px;
     float: left;
 }
-#sizeButton
+#sizeButton1, #sizeButton2
 {
     float: left;
     width: 25px;
