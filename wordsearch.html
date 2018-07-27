@@ -73,7 +73,7 @@
       <p>The words to be placed on the board, if there are too many words, or a word is too long to fit it will be excluded from the puzzle and the list. Current list: <span id="wordCount">0</span> words.
     </div>
   </div>
-  <textarea id="bingoInput" oninput="CountWords()"></textarea>
+  <textarea id="bingoInput"></textarea>
   <div class="row" id="borderRow">
     <div class="col-sm-1">
       <h2>Size: </h2>
@@ -84,7 +84,7 @@
       </p>
     </div>
   </div>
-  <select id="wordSearchSizeSelect" onchange="onSizeChanged()">
+  <select id="wordSearchSizeSelect">
     <option value="10">10x10</option>
     <option value="15" selected>15x15</option>
     <option value="20">20x20</option>
@@ -103,13 +103,13 @@
   <div class="row">
     <div class="col-sm-4">
       <label class="radioLabel">Random Boards
-      <input type="radio" name="check" onclick="handleClick(this)" value="random" id="randomRadio" checked>
+      <input type="radio" name="check" value="random" id="randomRadio" checked>
       <span class="checkmark"></span>
     </label>
     </div>
     <div class="col-sm-4">
       <label class="radioLabel">Identical
-      <input type="radio" name="check" onclick="handleClick(this)" value="blank" id="blankRadio">
+      <input type="radio" name="check" value="blank" id="blankRadio">
       <span class="checkmark"></span>
     </label>
     </div>
@@ -120,7 +120,7 @@
       <input id="bingoStudents" type="number"/>
     </div>
   </div>
-  <button id="printButton" onclick="RandomPuzzles()">Print Boards</button>
+  <button id="printButton">Print Boards</button>
 </div>
 </div>
 <!--Footer-->
@@ -200,6 +200,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-<script src="js/wordSearchScript.js"></script>
+<script src="js/wordsearchQuery.js"></script>
 </body>
 </html>
