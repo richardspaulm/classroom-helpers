@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Penmanship Practice - Classroom Helpers</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<title>Classroom Helpers</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
 <link rel="icon" href="./img/resources.png">
 
-<style type="text/css" media="print">
-@page {
-    size: auto;   /* auto is the initial value */
-    margin: 0;  /* this affects the margin in the printer settings */
-}
-
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -46,51 +38,37 @@
   </div>
     <a class="btn" href="contactme.html" id="dropLink">Contact me</a></li>
 </div>
-
-<div id="getStartedTools">
-	<h1 id="mainHeader">Custom Penmanship Worksheets</h1>
-	<h3 id="subHeader">Help your students improve their handwriting with focused practice, and relevant vocabulary.</h3>
-	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
-</div>
-<div class="container" id="formContainer">
-    <h1>Penmanship Practice</h1>
-  <div class="row">
-    <div class="col-sm-1">
-      <h2>Title:</h2>
+<div class="fluid-container">
+  <div class="row" id="contactRow">
+    <div class="col-lg-5" id ="formColumn">
+      <h1>Send Me A Message!</h1>
+      <div id="columnContents">
+        <p>Got an idea for the site, a question about use, or a bug? Want to inquire about doing some work on your own site? Shoot me a message!</p>
+        <form action="submit_message.php" method="post" id="contactForm">
+          <p>Name</p>
+          <input name="name" id="formInput"/>
+          <p>Email Address</p>
+          <input name="email" id="formInput"/>
+          <p>Message</p>
+          <textarea name="message" id="formInput"></textarea>
+          <button type="subit" class="btn">Send</button>
+        </form>
+      </div>
     </div>
-    <div class="col-sm-11">
-      <p>
-        The title for your page, will appear at the top.
-      </p>
-    </div>
-  </div>
-  <input id="bingoTitle"/>
-  <div class="row" id="borderRow">
-    <div class="col-sm-1">
-      <h2>Size: </h2>
-    </div>
-    <div class="col-sm-11">
-      <p>
-        Choose the size of your puzzle. The larger the puzzle, the more difficult.
-      </p>
-    </div>
-
-  </div>
-  <select id="wordSearchSizeSelect" onchange="onSizeChanged()">
-    <option value="14" selected>14 Lines</option>
-    <option value="28">28 Words</option>
-  </select>
-  <div class="row" id="borderRow">
-    <div class="col-sm-2">
-      <h2>Word Entry</h2>
-    </div>
-    <div class="col-sm-10">
-      <p>Enter any words you would like to be printed on the lines. The font is a dotted tracable font, and any fields left blank will provide a space with only the guided writing lines.</p>
+    <div class="col-lg-5" id="infoColumn">
+      <h1>What Do I Do?</h1>
+      <div id="columnContents">
+      <h4>Teaching</h4>
+        <p>My current day job is as a primary school teacher in Phnom Penh, Cambodia, teaching English to kindergarten, first and second grade.</p>
+        <h4>Web Design</h4>
+        <p>In the evenings and summertime, I am a programmer and designer proficient in HTML, CSS, Javascript, C#, XML, and PHP.</p>
+        <h4>Web and Native Android Applications</h4>
+        <p>Experienced in designing web applications like the worksheer generators you see on this website, and native android OS applications, and to begin developing for iOS and Windows phones soon as well.</p>
+        <p><span id="highlight">My Email</span>:   Richardspaulm@gmail.com</p>
+        <p><span id="highlight">My Website</span>: <a href="http://www.richardswebservices.com">Richards Web Services</a></p>
+      </div>
     </div>
   </div>
-      <div id="entryDiv"></div>
-
-    <button id="printButton" onclick="RandomGrams()">Print</button>
 </div>
 <!--Footer-->
 <div class="container-fluid" id="footer">
@@ -139,18 +117,6 @@
     <h5>Richards Web Services, 2018 &#169;</h5>
   </div>
 </div>
-<div id="toolInstructions">
-  <h1>How To Use</h1>
-  <h3>Enter A Title</h3>
-  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for the penmanship sheets is "Penmanship!"</p>
-  <h3>Size</h3>
-  <p>The size will determine how many lines are generated on your paper. 14 lines will be long lines that span the full width of the page (best for sentences), while selecting 28 lines will divide
-   the sheet into two columns of lines (best for single words).</p>
-  <h3>Entering Words</h3>
-  <p>The lines on the form represent where they will appear on the paper. To allow students a blank line to copy a word or sentence, just leave it blank!</p>
-     <div id="instructionButton" onclick="HideInstructions()">Close</div>
-</div>
-<div id="printable"></div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122217801-1"></script>
 <script>
@@ -161,9 +127,8 @@
   gtag('config', 'UA-122217801-1');
 </script>
 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-<script src="js/penmanshipScript.js"></script>
 </body>
 </html>

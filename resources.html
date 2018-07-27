@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Penmanship Practice - Classroom Helpers</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<title>Classroom Helpers</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
 <link rel="icon" href="./img/resources.png">
 
-<style type="text/css" media="print">
-@page {
-    size: auto;   /* auto is the initial value */
-    margin: 0;  /* this affects the margin in the printer settings */
-}
-
-</style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -46,51 +38,40 @@
   </div>
     <a class="btn" href="contactme.html" id="dropLink">Contact me</a></li>
 </div>
-
-<div id="getStartedTools">
-	<h1 id="mainHeader">Custom Penmanship Worksheets</h1>
-	<h3 id="subHeader">Help your students improve their handwriting with focused practice, and relevant vocabulary.</h3>
-	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+<div class="container" id="otherContainer">
+<h1>Other Resources</h1>
+<h3>Here are some pages that are either friends of our website, or tools that I have just found generally useful in my own teaching experience.</h3>
+<h3>If you have a website that you think could help fellow teachers, and would like me to consider it for this page, get a hold of me via the form, or my email available on the "Contact Me" page.</h3>
 </div>
-<div class="container" id="formContainer">
-    <h1>Penmanship Practice</h1>
-  <div class="row">
-    <div class="col-sm-1">
-      <h2>Title:</h2>
+<div class="container">
+  <div class="row" id="serviceRow"> 
+    <h1>Richards Web Services</h1>
+    <div class="col-lg-6">
+      <a href="http://www.richardswebservices.com"> <img src="./img/richardsWeb.png" style="width: 100%; margin: 25px auto;"/></a>
     </div>
-    <div class="col-sm-11">
-      <p>
-        The title for your page, will appear at the top.
-      </p>
-    </div>
-  </div>
-  <input id="bingoTitle"/>
-  <div class="row" id="borderRow">
-    <div class="col-sm-1">
-      <h2>Size: </h2>
-    </div>
-    <div class="col-sm-11">
-      <p>
-        Choose the size of your puzzle. The larger the puzzle, the more difficult.
-      </p>
-    </div>
-
-  </div>
-  <select id="wordSearchSizeSelect" onchange="onSizeChanged()">
-    <option value="14" selected>14 Lines</option>
-    <option value="28">28 Words</option>
-  </select>
-  <div class="row" id="borderRow">
-    <div class="col-sm-2">
-      <h2>Word Entry</h2>
-    </div>
-    <div class="col-sm-10">
-      <p>Enter any words you would like to be printed on the lines. The font is a dotted tracable font, and any fields left blank will provide a space with only the guided writing lines.</p>
+    <div class="col-lg-6">
+      <h2>Like What You See Here?</h2>
+      <h4>Need a website for your own business, or have a website you need updated, reworked, added to, or hosted? While I'm not teaching I am also running my own web design company, offering very competetive prices and professional quality, secure work.</h4>
+      <h4><span id="highlight">My Website</span></h4>
+      <a href="https://www.richardswebservices.com"><h4>Richards Web Services</h4></a>
     </div>
   </div>
-      <div id="entryDiv"></div>
-
-    <button id="printButton" onclick="RandomGrams()">Print</button>
+</div>
+<div class="container" id="otherContainer">
+  <div class="row" id="discoveryRow">
+    <h1>Discovery Education</h1>
+    <div class="col-lg-6">
+      <a href="https://discoveryeducation.com">
+        <img src="./img/discovery.jpg" style="width: 100%; margin: 25px auto;"/>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <h2>More Great Resources and Tools</h2>
+      <h4>A website that I used often for my own classroom, discovery education has amazing tools and resources available for all grade levels. They also feature some great worksheet generators, as well as interesting information and lesson plan ideas that your students will love. As per usual discovery does not disappoint when it comes to both their content and quality</h4>
+      <h4><span id="highlight">Their Website</span></h4>
+      <a href="https://www.discoveryeducation.com"><h4>Discovery Education<h4></a>
+    </div>
+  </div>
 </div>
 <!--Footer-->
 <div class="container-fluid" id="footer">
@@ -139,18 +120,6 @@
     <h5>Richards Web Services, 2018 &#169;</h5>
   </div>
 </div>
-<div id="toolInstructions">
-  <h1>How To Use</h1>
-  <h3>Enter A Title</h3>
-  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for the penmanship sheets is "Penmanship!"</p>
-  <h3>Size</h3>
-  <p>The size will determine how many lines are generated on your paper. 14 lines will be long lines that span the full width of the page (best for sentences), while selecting 28 lines will divide
-   the sheet into two columns of lines (best for single words).</p>
-  <h3>Entering Words</h3>
-  <p>The lines on the form represent where they will appear on the paper. To allow students a blank line to copy a word or sentence, just leave it blank!</p>
-     <div id="instructionButton" onclick="HideInstructions()">Close</div>
-</div>
-<div id="printable"></div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122217801-1"></script>
 <script>
@@ -161,9 +130,8 @@
   gtag('config', 'UA-122217801-1');
 </script>
 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-<script src="js/penmanshipScript.js"></script>
 </body>
 </html>

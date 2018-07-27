@@ -10,6 +10,8 @@ var entryDiv = document.getElementById("entryDiv");
 var puzzleTable = document.createElement("TABLE");
 var tableData = [];
 var numberData = [];
+var bonusVertical = [];
+var bonusHorizontal = [];
 var formSize = 1;
 var vertGroup = document.getElementById("verticalClueGroup");
 var horGroup = document.getElementById("horizontalClueGroup");
@@ -106,16 +108,19 @@ function DrawForm(){
 	var entryTable = document.createElement("TABLE");
 	if(formSize == 1){
 		formScale = 10;
+		formHeight = 8;
 		entryTable.id = "entryTable1";
 	} else if(formSize == 2){
 		formScale = 12;
+		formHeight = 8;
 		entryTable.id = "entryTable2";
 	} else if(formSize == 3){
 		formScale = 14;
+		formHeight = 9;
 		entryTable.id = "entryTable3";
 	} else if(formSize == 4){
 		formScale = 16;
-		formHeight = 8;
+		formHeight = 10;
 		entryTable.id = "entryTable4";
 	} else if(formSize == 5){
 		formScale = 18;
@@ -201,8 +206,27 @@ function NewVerticalClue()
 	newClueDiv.appendChild(newClueInt);
 	newClueDiv.appendChild(newClueInput);
 	vertGroup.appendChild(newClueDiv);
-	console.log(vertCount);
+	bonusVertical.push(newClueDiv);
+	console.log(bonusVertical[bonusVertical.length-1]);
 	return false;
+}
+function RemoveVerticalClue()
+{
+	if(vertCount >= 2)
+	{	
+		bonusVertical[bonusVertical.length-1].remove();
+		bonusVertical.splice((bonusVertical.length-1), 1);
+		vertCount -= 1;
+	}
+}
+function RemoveHorizontalClue()
+{
+	if(horCount >= 2)
+	{	
+		bonusHorizontal[bonusHorizontal.length-1].remove();
+		bonusHorizontal.splice((bonusHorizontal.length-1), 1);
+		horCount -= 1;
+	}
 }
 function NewHorizontalClue()
 {
@@ -216,6 +240,7 @@ function NewHorizontalClue()
 	newClueDiv.appendChild(newClueInt);
 	newClueDiv.appendChild(newClueInput);
 	horGroup.appendChild(newClueDiv);
+	bonusHorizontal.push(newClueDiv);
 	console.log(vertCount);
 	return false;
 }
@@ -233,7 +258,7 @@ function PrintCrossword()
 	}
 	bingoHead.appendChild(bingoHeadText);
 	printDiv.appendChild(bingoHead);
-	var tableString = "Table" + formScale.toString();
+	var tableString = "table" + formScale.toString();
 	puzzleTable.id = tableString;
 	var totalCount = 0;
 	for(j=0; j < formHeight; j++)
@@ -267,10 +292,20 @@ function PrintCrossword()
 	horizontalContainer.id="horizontalClueContainer";
 	var verticalClueList = document.querySelectorAll("[id = verticalClue]");
 	var horizontalClueList = document.querySelectorAll("[id = horizontalClue]")
+		var vertClueHeader = document.createElement("H3");
+		var verticalClueHead = document.createTextNode("Vertical");
+		vertClueHeader.appendChild(verticalClueHead);
+		verticalContainer.appendChild(vertClueHeader);
+		vertClueHeader.style.textAlign = "center";
+				var horClueHeader = document.createElement("H3");
+		var horizontalClueHead = document.createTextNode("Horizontal");
+		horClueHeader.appendChild(horizontalClueHead);
+		horizontalContainer.appendChild(horClueHeader);	
 	for(k=0; k < verticalClueList.length; k++)
 	{
 		var currentClueDiv = document.createElement("DIV");
 		currentClueDiv.id="clueDiv";
+
 		var currentClueCount = document.createElement("P");
 		currentClueCount.id="clueCount";
 		currentClueCount.innerHTML = (k+1).toString();
@@ -285,6 +320,7 @@ function PrintCrossword()
 	{
 		var currentClueDiv = document.createElement("DIV");
 		currentClueDiv.id="clueDiv";
+
 		var currentClueCount = document.createElement("P");
 		currentClueCount.id="clueCount";
 		currentClueCount.innerHTML = (kk+1).toString();
@@ -300,8 +336,12 @@ function PrintCrossword()
 
 	printDiv.appendChild(clueContainer);
 
-	var printContents = document.getElementById("printable").innerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-    location.reload();
+     var printContents = document.getElementById("printable").innerHTML;
+     var printWindow = window.open()
+     printWindow.document.open();
+     printWindow.document.write('<html><head><title>Bingo Printout</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="css/styleSheet.css"><style type="text/css" media="print">@page{size: auto;margin: 0;}</style></head><body onfocus="setTimeout(function() {window.print(); window.close(); }, 100);">')
+ 	 printWindow.document.write(printContents);
+ 	 printWindow.document.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script></body></html>');
+ 	 var printedDiv = document.getElementById("printable");
+ 	 printedDiv.innerHTML = "";
 }

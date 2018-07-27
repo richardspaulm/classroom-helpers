@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Penmanship Practice - Classroom Helpers</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<title>Bingo Maker - Classroom Helpers</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
 <link rel="icon" href="./img/resources.png">
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <style type="text/css" media="print">
 @page {
     size: auto;   /* auto is the initial value */
     margin: 0;  /* this affects the margin in the printer settings */
+    
 }
-
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
-
 <div id="navbar" class="header">
   <a class="btn" href="index.html" id="dropLink">Home</a></li>
   <div class="dropdown show">
@@ -46,51 +44,76 @@
   </div>
     <a class="btn" href="contactme.html" id="dropLink">Contact me</a></li>
 </div>
-
 <div id="getStartedTools">
-	<h1 id="mainHeader">Custom Penmanship Worksheets</h1>
-	<h3 id="subHeader">Help your students improve their handwriting with focused practice, and relevant vocabulary.</h3>
-	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+	<h1 id="mainHeader"> Bingo Board Maker</h1>
+	<h3 id="subHeader">Create a randomized, unique board for each of your students!</h3>
+	<div id="scrollButtonTools">Instructions</div>
 </div>
 <div class="container" id="formContainer">
-    <h1>Penmanship Practice</h1>
+  <h1>Create Your Bingo Board</h1>
   <div class="row">
     <div class="col-sm-1">
       <h2>Title:</h2>
     </div>
-    <div class="col-sm-11">
+    <div clsas="col-sm-11">
       <p>
-        The title for your page, will appear at the top.
+        The title for your board, will appear at the top of the page.
       </p>
     </div>
   </div>
   <input id="bingoTitle"/>
   <div class="row" id="borderRow">
-    <div class="col-sm-1">
-      <h2>Size: </h2>
-    </div>
-    <div class="col-sm-11">
-      <p>
-        Choose the size of your puzzle. The larger the puzzle, the more difficult.
-      </p>
-    </div>
-
-  </div>
-  <select id="wordSearchSizeSelect" onchange="onSizeChanged()">
-    <option value="14" selected>14 Lines</option>
-    <option value="28">28 Words</option>
-  </select>
-  <div class="row" id="borderRow">
     <div class="col-sm-2">
-      <h2>Word Entry</h2>
+      <h2>Word List:</h2>
     </div>
     <div class="col-sm-10">
-      <p>Enter any words you would like to be printed on the lines. The font is a dotted tracable font, and any fields left blank will provide a space with only the guided writing lines.</p>
+      <p>The words to be placed on the board, minumum 24 words. Words can be separated by commas or separate lines. Current list: <span id="wordCount">0</span>/24 words.
     </div>
   </div>
-      <div id="entryDiv"></div>
-
-    <button id="printButton" onclick="RandomGrams()">Print</button>
+  <textarea id="bingoInput"></textarea>
+  <div class="row" id="borderRow">
+    <div class="col-sm-4">
+      <h2>Random or Blank?</h2>
+    </div>
+    <div class="col-sm-8">
+      <p>
+        Random puzzles will create a unique board for each student in your class, while Identical will create a blank board with a word list at the bottom for your students to fill in.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <label class="radioLabel">Random Boards
+      <input type="radio" name="check" value="random" id="randomRadio" checked>
+      <span class="checkmark"></span>
+    </label>
+    </div>
+    <div class="col-sm-4">
+      <label class="radioLabel">Blank Template
+      <input type="radio" name="check" value="blank" id="blankRadio">
+      <span class="checkmark"></span>
+    </label>
+    </div>
+  </div>
+  <div id="divToHide">
+    <div class="studentDiv" id="borderRow">
+      <h2 style="margin-left: 1%;">Number of Students</h2>
+      <input id="bingoStudents" type="number"/>
+    </div>
+  </div>
+  <button id="printButton">Print Boards</button>
+</div>
+<div id="toolInstructions">
+  <h1>How To Use</h1>
+  <h3>Enter A Title</h3>
+  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for bingo boards is "Bingo!"</p>
+  <h3>Entering Words</h3>
+  <p>If you want customized boards for each student enter at least 24 words in the second box, either separated by commas or place each word on a new line. If you enter more than
+    24 words, all of the words you enter will be displayed at the list on the bottom of the paper, and the program will randomly select and place 24 words on each board.</p>
+  <h3>Random or Blank</h3>
+  <p>Random will create a board for each of your students, but the blank boards option will generate a paper with empty blocks and a full word list at the bottom, for your students
+     to choose and place.</p>
+     <div id="instructionButton">Close</div>
 </div>
 <!--Footer-->
 <div class="container-fluid" id="footer">
@@ -139,17 +162,6 @@
     <h5>Richards Web Services, 2018 &#169;</h5>
   </div>
 </div>
-<div id="toolInstructions">
-  <h1>How To Use</h1>
-  <h3>Enter A Title</h3>
-  <p>Enter a title for your boards here! The title will be displayed at the top of every board. The default title for the penmanship sheets is "Penmanship!"</p>
-  <h3>Size</h3>
-  <p>The size will determine how many lines are generated on your paper. 14 lines will be long lines that span the full width of the page (best for sentences), while selecting 28 lines will divide
-   the sheet into two columns of lines (best for single words).</p>
-  <h3>Entering Words</h3>
-  <p>The lines on the form represent where they will appear on the paper. To allow students a blank line to copy a word or sentence, just leave it blank!</p>
-     <div id="instructionButton" onclick="HideInstructions()">Close</div>
-</div>
 <div id="printable"></div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-122217801-1"></script>
@@ -161,9 +173,9 @@
   gtag('config', 'UA-122217801-1');
 </script>
 
- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="./js/bingoQuery.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-<script src="js/penmanshipScript.js"></script>
 </body>
 </html>

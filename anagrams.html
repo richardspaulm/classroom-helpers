@@ -2,7 +2,10 @@
 <html>
 <head>
 	<title>Anagram Maker - Classroom Helpers</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<link rel="icon" href="./img/resources.png">
+
 <style type="text/css" media="print">
 @page {
     size: auto;   /* auto is the initial value */
@@ -12,60 +15,112 @@
 </style>
 </head>
 <body>
-
-<ul id="navbar">
-  <li><a href="index.html">Home</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Tools</a>
-    <div class="dropdown-content">
-      <a href="bingoPage.html">Bingo Maker</a>
-      <a href="wordSearch.html">Word Search</a>
-      <a href="anagrams.html">Anagrams</a>
-      <a href="crossword.html">Crossword Puzzle</a>
-      <a href="penmanship.html">Penmanship Practice</a>
+<div id="navbar" class="header">
+  <a class="btn" href="index.html" id="dropLink">Home</a></li>
+  <div class="dropdown show">
+     <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropLink">Worksheets</a>  
+     <div class="dropdown-menu">
+        <a class="dropdown-item" href="bingo.html">Bingo Maker</a>
+        <a class="dropdown-item" href="wordsearch.html">Word Search</a>
+        <a class="dropdown-item" href="anagrams.html">Anagrams</a>
+        <a class="dropdown-item" href="crossword.html">Crossword Puzzle</a>
+        <a class="dropdown-item" href="penmanship.html">Penmanship Practice</a>
     </div>
-  </li>
-    <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Apps</a>
-    <div class="dropdown-content">
-      <a href="#">Easy Grader</a>
+  </div>
+    <div class="dropdown show">
+     <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropLink">Apps</a>  
+     <div class="dropdown-menu">
+        <a class="dropdown-item" href="https://play.google.com/store/apps/details?id=com.TeacherApps.EZGrader">Easy Grader</a>
     </div>
-  </li>
-  <li><a href="#resources">Other Resources</a>
-</ul>
+  </div>
+    <div class="dropdown show">
+     <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropLink">Other Resources</a>  
+     <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Coming soon!</a>
+        <a class="dropdown-item" href="#">Visit My Contact</a>
+        <a class="dropdown-item" href="#">Page If You Would</a>
+        <a class="dropdown-item" href="#">Like To Be A Partner!</a>
+    </div>
+  </div>
+    <a class="btn" href="contactme.html" id="dropLink">Contact me</a></li>
+</div>
 
 <div id="getStartedTools">
 	<h1 id="mainHeader"> Anagram Maker</h1>
 	<h3 id="subHeader">Make your students think about spelling structure while racing to solve your puzzle! Have them decode single words, or a whole sentence of your choosing</h3>
 	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
 </div>
-<div class="toolContainer">  <form id="wordSearchForm">
-  <h2 class="toolSetting">Title</h2>
-   <p class="toolSetting">The name of your puzzle! Default is "Anagrams!"</p>
-   <input id="bingoTitle"/>
-  <h2 class="toolSetting">Word Entry</h2>
-   <p class="toolSetting">Enter at least as many words as you would like to appear on your page! If you enter more words than your selected size, they will be randomly chosen.</p>
-   <textarea id ="bingoInput"></textarea>
-   <h2 class="toolSetting">Size</h2>
-   <p class="toolSetting">How fast are your students? Or how much time do you have to kill?</p>
-        <select id = "anagramSizeSelect" class="toolSetting" onchange="onSizeChanged()">
-      <option value="6">6 Words</option>
-      <option selected value="8">8 Words</option>
-      <option value="10">10 Words</option>
-      <option value="12">12 Words</option>
-     </select>
-    <h2 class="toolSetting">Identical or Random?</h2>
-     <p class="toolSetting">Worried your students might cheat? Choose random and each one of your students will get custom anagrams, and even different words if you inlcude more than the selected size in your words list. Identical will generate only one page, which you can print as many copies as needed.</p>
-     <select id = "anagramRandSelect" class="toolSetting" onchange="onSelectChanged()">
-      <option value="identical">Identical</option>
-      <option value="random">Random</option>
-     </select>
-  <div id="randomDiv" class="toolSetting">
-    <h2>Number of Students</h2>
-    <input id="bingoStudents"/>
+<div class="container" id="formContainer">
+    <h1>Anagrams Worksheets</h1>
+  <div class="row">
+    <div class="col-sm-1">
+      <h2>Title:</h2>
+    </div>
+    <div clsas="col-sm-11">
+      <p>
+        The title for your page, will appear at the top.
+      </p>
+    </div>
   </div>
-</form>
-  <button class="toolSetting" id="wordSearchButton">Create</button>
+  <input id="bingoTitle"/>
+  <div class="row" id="borderRow">
+    <div class="col-sm-2">
+      <h2>Word List:</h2>
+    </div>
+    <div class="col-sm-10">
+      <p>Your word list. If more words are selected than entered, they will be randomly chosen.</p><p> Current list: <span id="wordCount">0</span> words.</p>
+    </div>
+  </div>
+  <textarea id="bingoInput" oninput="CountWords()"></textarea>
+  <div class="row" id="borderRow">
+    <div class="col-sm-1">
+      <h2>Size: </h2>
+    </div>
+    <div class="col-sm-11">
+      <p>
+        Choose the size of your puzzle. The larger the puzzle, the more difficult.
+      </p>
+    </div>
+  </div>
+  <select id="wordSearchSizeSelect" onchange="onSizeChanged()">
+    <option value="6">6 Words</option>
+    <option value="8" selected>8 Words</option>
+    <option value="10">10 Words</option>
+    <option value="12">12 Words</option>
+  </select>
+  <div class="row" id="borderRow">
+    <div class="col-sm-4">
+      <h2>Random or Identical?</h2>
+    </div>
+    <div class="col-sm-8">
+      <p>
+        Random puzzles will create a unique board for each student in your class, while Identical will create a single puzzle that you can print as many of as you need.
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <label class="radioLabel">Random Boards
+      <input type="radio" name="check" onclick="handleClick(this)" value="random" id="randomRadio" checked>
+      <span class="checkmark"></span>
+    </label>
+    </div>
+    <div class="col-sm-4">
+      <label class="radioLabel">Identical
+      <input type="radio" name="check" onclick="handleClick(this)" value="blank" id="blankRadio">
+      <span class="checkmark"></span>
+    </label>
+    </div>
+  </div>
+  <div id="divToHide">
+    <div class="studentDiv" id="borderRow">
+      <h2 style="margin-left: 1%;">Number of Students</h2>
+      <input id="bingoStudents" type="number"/>
+    </div>
+  </div>
+  <button id="printButton" onclick="RandomGrams()">Print Boards</button>
+</div>
+</div>
 <div id="toolInstructions">
   <h1>How To Use</h1>
   <h3>Enter A Title</h3>
@@ -81,7 +136,67 @@
    more words than the selected page size, words will be randomly chosen from the list.</p>
      <div id="instructionButton" onclick="HideInstructions()">Close</div>
 </div>
+<!--Footer-->
+<div class="container-fluid" id="footer">
+  <div class="row" style="margin-bottom: 0;">
+    <div class="col-lg-3" >
+      <a href="contactme.html">
+        <img src="./img/sponsorImg.png"/>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <h1>Classroom Helpers</h1>
+      <div class="row">
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="worksheets.html">Worksheets</a>
+        </div>
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="#">Apps</a>
+        </div>
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="contactme.html">Contact</a>
+        </div>
+        <div class="col-6 col-md-3 order-md-7">
+          <a href="https://play.google.com/store/apps/details?id=com.TeacherApps.EZGrader">Easy Grader</a>
+        </div>
+        <div class="col-6 col-md-3 order-md-6" id="footlinks">
+          <a href="bingo.html">Bingo</br></a>
+          <a href="wordsearch.html">Word Seach</br></a>
+          <a href="anagrams.html">Anagrams</br></a>
+          <a href="crossword.html">Crossword</br></a>
+          <a href="penmanship.html">Penmanship</br></a>
+        </div>
+        <div class="col-6 col-md-3" id="footlinks">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <a href="contactme.html">
+        <img src="./img/sponsorImg.png"/>
+      </a>
+    </div>
+  </div>
+  <div class="container-fluid" id="copyright">
+    <h5>Richards Web Services, 2018 &#169;</h5>
+  </div>
+</div>
 <div id="printable"></div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122217801-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122217801-1');
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
 <script src="js/anagramScript.js"></script>
 </body>
 </html>

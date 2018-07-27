@@ -1,17 +1,17 @@
-var totalWords = 15;
-var sizeSelect = document.getElementById("sizeSelect");
+var totalWords = 14;
+var sizeSelect = document.getElementById("wordSearchSizeSelect");
 var entryDiv = document.getElementById("entryDiv");
-var button = document.getElementById("wordSearchButton");
-wordSearchButton.onclick = CreatePage;
+var button = document.getElementById("printButton");
+button.onclick = CreatePage;
 DrawForm();
 function onSizeChanged()
 {
 	var currentSize = sizeSelect.options[sizeSelect.selectedIndex].value;
-	if(currentSize == "15"){
-		totalWords = 15;
+	if(currentSize == "14"){
+		totalWords = 14;
 		button.onclick = CreatePage;
-	} else if (currentSize == "30"){
-		totalWords = 30;
+	} else if (currentSize == "28"){
+		totalWords = 28;
 		button.onclick = CreateTwenty;
 	} 
 	DrawForm();
@@ -23,20 +23,20 @@ function DrawForm()
 	entryDiv.innerHTML = "";
 	var entryTable = document.createElement("TABLE");
 	entryTable.id="penmanshipEntry";
-	if(totalWords == 15){
+	if(totalWords == 14){
 		for(y=0; y < totalWords; y++)
 		{
 			var row=document.createElement("TR");
 			entryTable.appendChild(row);
 			var data = document.createElement("TD");
 			var input = document.createElement("INPUT");
-			input.maxLength = 26;	
+			input.maxLength = 20;	
 			input.id="formInput";
 			data.appendChild(input);
 			row.appendChild(data);
 		}
 	}
-	else if(totalWords == 30)
+	else if(totalWords == 28)
 	{
 	for(i=0; i < (totalWords/2); i++)
 	{
@@ -47,7 +47,7 @@ function DrawForm()
 			var data = document.createElement("TD");
 			var input = document.createElement("INPUT");
 			input.id="formInput20"
-			input.maxLength = 12;
+			input.maxLength = 9;
 			data.appendChild(input);
 			row.appendChild(data);
 		}
@@ -93,22 +93,22 @@ function CreatePage()
 		entryWord.appendChild(entryWordText);
 		wordsDiv.appendChild(entryWord);
 		entryWord.id="entryWord";
-		entryWordTop = ((j + 1) * 61).toString() + "px";
+		entryWordTop = ((j + 1) * 82).toString() + "px";
 		entryWord.style.top = entryWordTop;
 		linesDiv.appendChild(dotsDiv);
 		linesArea.appendChild(linesDiv);
 
 	}
-	
-	var printContents = document.getElementById("printable").innerHTML;
-	document.body.innerHTML = printContents;
-	$(function() { $('body').hide().show(); });
-	setTimeout(function(){ 	window.print(); }, 1);
+     var printContents = document.getElementById("printable").innerHTML;
+     var printWindow = window.open()
+     printWindow.document.open();
+     printWindow.document.write('<html><head><title>Bingo Printout</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="css/styleSheet.css"><style type="text/css" media="print">@page{size: auto;margin: 0;}</style></head><body onfocus="setTimeout(function() {window.print(); window.close(); }, 1000);">')
+ 	 printWindow.document.write(printContents);
+ 	 printWindow.document.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  <script type="text/javascript" charset="utf-8">$(function() { $("body").hide().show(); });</script></body></html>');
+ 	 var printedDiv = document.getElementById("printable");
+ 	 printedDiv.innerHTML = "";
 
 
-
-
-     //document.body.innerHTML = originalContents;
 }
 
 function CreateTwenty()
@@ -145,7 +145,7 @@ function CreateTwenty()
 
 	}
 	rowCounter = 1;
-	for(k=0; k < 30; k++)
+	for(k=0; k < 28; k++)
 	{
 
 			var linesDiv = document.createElement("DIV");
@@ -156,7 +156,7 @@ function CreateTwenty()
 			{
 			var entryWord = document.createElement("P");
 			entryWord.id="entryWord20";
-			entryWordTop = ((rowCounter) * 61).toString() + "px";
+			entryWordTop = ((rowCounter) * 80).toString() + "px";
 			entryWord.style.top = entryWordTop;
 			wordsDiv.appendChild(entryWord);
 			pList.push(entryWord);
@@ -166,7 +166,7 @@ function CreateTwenty()
 			{
 			var entryWord2 = document.createElement("P");
 			entryWord2.id="entryWord20";
-			entryWord2.style.left = "420px";
+			entryWord2.style.left = "500px";
 			entryWord2.style.top = entryWordTop;
 			wordsDiv.appendChild(entryWord2);
 			pList.push(entryWord2);
@@ -183,10 +183,14 @@ function CreateTwenty()
 		pList[m].appendChild(currentWord);
 	}
 	
-	var printContents = document.getElementById("printable").innerHTML;
-	document.body.innerHTML = printContents;
-	$(function() { $('body').hide().show(); });
-	setTimeout(function(){ 	window.print(); }, 1);
+     var printContents = document.getElementById("printable").innerHTML;
+     var printWindow = window.open()
+     printWindow.document.open();
+     printWindow.document.write('<html><head><title>Bingo Printout</title><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"><link rel="stylesheet" type="text/css" href="css/styleSheet.css"><style type="text/css" media="print">@page{size: auto;margin: 0;}</style></head><body onfocus="setTimeout(function() {window.print(); window.close(); }, 100);">')
+ 	 printWindow.document.write(printContents);
+ 	 printWindow.document.write('<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script></body></html>');
+ 	 var printedDiv = document.getElementById("printable");
+ 	 printedDiv.innerHTML = "";
 }
 var popUp = document.getElementById("toolInstructions");
 function ShowInstructions()

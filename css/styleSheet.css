@@ -5,97 +5,228 @@
 }
 html, body{
     height:100%;
-    background-color: #E7E2E6;
+    background-color: #EFECF3;
+}
+h1
+{
+    text-align: center;
 }
 @font-face {
     font-family: 'kg_primary_dots_linedregular';
-    src: url('../css/fonts/kgprimarydots-webfont.woff');
-    font-weight: normal;
-    font-style: normal;
+
+  src: url('../css/fonts/kgprimarydots-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../css/fonts/kgprimarydots-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../css/fonts/kgprimarydots-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../css/fonts/kgprimarydots-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../css/fonts/kgprimarydots-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 
 }
 /*Main Class Declarations*/
 .container{
-    max-width: 60vw;
-    margin: auto;
-    min-height: 100%;
-    background-color: #DAD2D8;
-    padding-top: 20px;
-    padding-bottom: 50px;
-}.toolContainer{
-    max-width: 60vw;
-    margin: auto;
-    min-height: 100%;
-    background-color: #DAD2D8;
-    padding-top: 20px;
-    overflow-y: hidden;
+        box-shadow: 4px 4px 32px 0px rgba(0,0,0,0.75);
+        background-color: white;
+        padding: 0;
 }
+.row
+{
+    margin: 20px 0;
+}
+#highlight
+{
+    text-decoration: underline;
+    font-weight: bold;
+}
+#footer
+{
+    background-color: #3D3B3C;  
+    text-align: center;
+    padding: 0;
+    position: relative;
+    display: table;
+}
+#adDiv
+{
+   display: table-cell;
+}
+#footer h1
+{
+    width: 100%;
+    margin: 0;
+    color: white;
+}
+#footer img
+{
+    width: 60%;
+    margin: 20%;
+}
+
+#footer a
+{
+    color: #DB504A;
+    font-weight: bold;
+    font-size: 20px;
+    width: 100%;    
+    margin-bottom: 20px
+}
+#footlinks
+{
+    float: left;
+    width: 40%;
+}
+#copyright
+{
+    background-color: #4F6D7A;
+    text-align: right;
+    padding: 10px 20px 5px 10px;
+}
+#copyright h1
+{
+    margin: 0;
+    text-align: center;
+}
+
 .subPageContainer{
     width: 80vw;
     margin: auto;
 }
+        
 #navbar {
-    list-style-type: none;
-    margin: 0;
+    list-style-type: none;  
+    margin: 0 0 -10px 0;
     padding: 0 0 0 10px;
-    overflow: hidden;
-    background-color: #573280;
+    background-color: #084C61;
     font-size: 20px;
-    border-bottom: solid 3px white;
-}
-
-li {
-    float: left;
-}
-
-li a, .dropbtn {
+    border-bottom: solid 1px white;
+    z-index: 10;
+    overflow: visible;
     display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+    width: 100%;
 }
-
-li a:hover, .dropdown:hover .dropbtn {
+#dropLink
+{
+    float: left;
+    font-size: 20px;
+    color: white;
+}
+#dropLink:hover
+{
     background-color: white;
     color: #573280;
 }
 
-li.dropdown {
-    display: inline-block;
-}
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-}
-
-.dropdown-content a:hover {background-color: #f1f1f1}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
 #getStarted{
 	min-height: 35vh;
-	background-color: #573280;
-    padding: 8vh 0 0 0;
+	background-color: #084C61;
+    padding: 8vh 0 4vh 0;
+    z-index: 0;
+    box-shadow: 4px 4px 32px 0px rgba(0,0,0,0.75);  
 }
 #getStartedTools{
     min-height: 30vh;
-    background-color: #0F8B8D;
+    background-color: #56A3A6;
     padding: 5vh 0 5vh 0;
+    box-shadow: 4px 4px 32px 0px rgba(0,0,0,0.75);
+}
+#formContainer
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #8EADB7;
+}
+#formContainer h1
+{
+    background-color: #084C61;
+    color: white;
+    height: 75px;
+    line-height: 75px;
+    text-align: center;
+}
+#formContainer h2
+{
+    line-height: 40px;
+    text-align: left;
+}
+#formContainer p
+{
+    line-height: 40px;
+    font-size: 20px;
+    margin: 0 10px;
+}
+#borderRow
+{
+    border-top: solid 2px black;
+}
+#bingoStudents
+{
+    margin: 20px 5%;
+    font-size: 40px;
+    width: 120px;
+}
+#wordSearchSizeSelect
+{
+    font-size: 40px;
+    margin: 20px 5%;
+}
+.radioLabel
+{
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-left: 5%;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#printButton
+{
+    width: 60%;
+    margin: 20px 20%;
+    font-size: 50px;
+    height: 100px;
+    background-color: #DB504A;
+    color: white;
+}
+.radioLabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+.radioLabel:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+.radioLabel input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+.radioLabel input:checked ~ .checkmark:after {
+    display: block;
+}
+/* Style the indicator (dot/circle) */
+.radioLabel .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
 }
 #mainHeader{
     text-align: center;
@@ -114,114 +245,183 @@ li.dropdown {
     padding: 1em 0 1em 0;
     text-decoration: none;
     font-weight: bold;
+    background-color: #DB504A;
     font-size: 20px;
     margin: 40px auto 0 auto;
     color: white;
     display: block;
     width: 160px;
     border: solid white 2px;
+            box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.75);
 }
 #scrollButton:hover{
     background-color: white;
-    color: #573280;
+    color: #084C61;
     cursor: pointer;
 }
 #scrollButtonTools:hover{
     background-color: white;
-    color: #0F8B8D;
+    color: #56A3A6;
     cursor: pointer;
 }
 #worksheetInfo{
-    padding: 40px;
+    padding: 40px 20px;
 }
 #cyanOrb{
     width: 90%;
     float: left;
     display: block;
-    margin: 0 5%;
+    margin: 20px 5%;
     padding-top: 0;
 }
+#containerButton
+{
+    width: 160px;
+    height: 60px;
+    margin: 0 auto 10px auto;
+    line-height: 58px;
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+}
+#worksheetLink div:hover
+{
+    cursor: pointer;
+    background-color: #F1BFBD;
+    color: black;
+    font-style: bold
+}
+#worksheetLink div
+{
+    border: solid 3px #DB504A;
+    background-color: #DB504A;
+}
+#appButton div:hover
+{
+    cursor: pointer;
+    background-color: #B8B7B8;
+    color: black;
+    font-style: bold
+}
+#appButton div
+{
+    border: solid 3px #3D3B3C;
+    background-color: #3D3B3C;
+}
+#resourceLink div:hover
+{
+    cursor: pointer;
+    background-color: #BFC9CE;
+    color: black;
+    font-style: bold
+}
+#resourceLink div
+{
+    border: solid 3px #4F6D7A;
+    background-color: #4F6D7A;
+}
+#contactLink div:hover
+{
+    cursor: pointer;
+    background-color: #C1DDDE;
+    color: black;
+    font-style: bold
+}
+#contactLink div
+{
+    border: solid 3px #56A3A6;
+    background-color: #56A3A6;
+}
+
 #leftBlock{
-    width: 50%;
     float: left;
     display: block;
-    margin: 0;
-    display: block;
+    text-align: center;
     padding-top: 30px;
+    background-color: #50AAAC;
+}
+#worksheetImgBlock
+{
+    text-align: center;
+    background-color: #DB504A;
+}#resourcesImgBlock
+{
+    text-align: center;
+    background-color: #4F6D7A;
+}
+#resourcesBlock
+{
+    padding-top: 5px;
+    background-color: #BFC9CE;
+    text-align: center;
+    position: relative;
+    padding-bottom: 70px;
+
+}
+#resourcesBlock p
+{
+    text-align: left;
+}
+#customWorksheets
+{
+    padding-top: 5px;
+    padding-bottom: 70px;
+    background-color: #F1BFBD;
     text-align: center;
 }
+#customWorksheets p
+{
+    text-align: left;
+}
+#appBlock
+{
+    padding-top: 5px;
+    background-color: #B8B7B8;
+    padding-bottom: 70px;
+}
+#appImgBlock
+{
+    text-align: center;
+    background-color: #3D3B3C;
+}#contactBlock
+{
+    padding-top: 5px;
+    background-color: #C1DDDE;
+    padding-bottom: 70px;
+}
+#contactImgBlock
+{
+    text-align: center;
+    background-color: #56A3A6;
+}
 #rightBlock{
-    width: 50%;
     float: right;
-    margin: auto;
     display: block;
+    text-align: center;
     padding-top: 30px;
 }
-#rightBlock h1{
-    text-align: center; 
-    margin-bottom: 20px;
-    color: #2E2D4D;
-}
-#rightBlock p{
-    margin-top: 20px;
-}
-#rightBlock p span{
-    font-weight: bold;
-}
-
-
 /*Bingo Page */
 #bingoInput{
-    width: 80%;
-    margin: 0 auto 20px auto;
+    width: 55%;
+    margin: 40px 5%;
     display: block;
     min-height: 200px;
-    background-color: #E7E2E6;
+    background-color: #E8EEF0;
     font-size: 20px;
-}
-.toolSetting {
-    width: 80%;
-    display: block;
-    margin: auto;
-    margin-bottom: 20px;
 }
 #bingoTitle{
-    background-color: #E7E2E6;
-    font-size: 50px;
-    width: 80%;
-    display: block;
-    margin: auto;
-    margin-bottom: 40px;
+    margin: 20px 5%;
+    width: 55%;
+    font-size: 40px;
+    background-color: #E8EEF0;
+    padding: 0 10px;
+    color: #212529;
 }
-#bingoStudents{
-    background-color: #E7E2E6;
-    font-size: 50px;
-    width: 100px;
-    margin: 0;
-}
-#buttonDiv{
-    width: 100%;
-    display: block;
-}
-#bingoButton{
-    width: 80%;
-    float: left;
-    margin: 20px 10% 50px 10%;
-    height: 75px;
-    font-size: 25px;
-}
-select.toolSetting {
-    width: 25%;
-    margin: 0 10% 20px 10%;
-    font-size: 20px;
-    padding: 5px;
-}
-#wordSearchButton{
-    width: 40%;
-    display: block;
-    margin: 20px 10% 0 10%;
-    height: 75px;
-}
+
 #randomDiv{
     display: none;
 }
@@ -242,11 +442,13 @@ select.toolSetting {
 }
 #bingoBoard td{
     border: solid 1px black;
+    display: table-cell;
     width: 120px;
-    height: 120px;
+    height: 150px;
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    font-size: 20px;
 }
 #freeSpace{
     text-align: center;
@@ -263,8 +465,8 @@ select.toolSetting {
     line-height: 60px;
     width: 100%;
 }
-#randomPrintable{
-    height: 100vh;
+.randomPrintable{
+    height: 325mm;
     overflow: hidden;
 }
 #bigWordList{
@@ -276,11 +478,19 @@ select.toolSetting {
 #randomDivBingo{
     display: block;
 }
-#wordsFifteen{
+#words15, #wordsLarge{
     margin: 50px auto 0 auto;
     table-layout: fixed;
 }
-#wordsFifteen td{
+#words15 td{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 25px;
+}
+#wordsLarge td
+{
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -297,18 +507,26 @@ select.toolSetting {
     padding-top: 18px;
 }
 #decreaseSize{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     float: left;
     margin: 18px;
+    padding: 0;
 }#increaseSize{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     float: left;
     margin: 18px;
 }
 #sizeTable{
+    margin: 20px 5px;
     float: left;
+}
+#sizeButton
+{
+    float: left;
+    width: 25px;
+    margin: 32px 20px;
 }
 #sizeTable td{
     border: 1px solid black;
@@ -316,9 +534,7 @@ select.toolSetting {
     height: 50px;
     background-color: #E7E2E6;
 }
-#toolSetting h3{
-    float: left;
-}
+
 #entryTable1, #entryTable2, #entryTable3, #entryTable4, #entryTable5{
     margin: auto;
 }
@@ -331,81 +547,80 @@ select.toolSetting {
     color: white;
 }#entryTable3 input, #entryTable4 input, #entryTable5 input
 {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     text-align: center;
     font-size: 20px;
     color: white;
 }
-#entryTable1 p, #entryTable2 p 
+#entryTable1 p, #entryTable2 p, #entryTable3 p, #entryTable4 p, #entryTable5 p
 {
-    width: 12px;
-    height: 16px;
+    line-height: 18px;
+    width: 17px;
+    height: 17px;
     font-size: 15px;
     padding-left: 3px;
-    background-color: red;
+    background-color: gray;
+    border: solid 1px black;
     float: left;
     position: absolute;
-    margin: -53px 0 0 1px; 
-}#entryTable3 p, #entryTable4 p, #entryTable5 p
+    margin: -49px 0 0 1px; 
+    font-weight: bold;
+}
+#table10
 {
-    width: 9px;
-    height: 12px;
-    font-size: 12px;
-    padding-left: 3px;
-    background-color: red;
-    float: left;
-    position: absolute;
-    margin: -43px 0 0 1px; 
+    margin: 30px auto;
+    border-spacing: 10px;
+    border: solid 1px black;
+
 }
-}
-#Table10
+table#table10
 {
     margin: 20px auto;
-    border-spacing: 0;
+    height: 650px;
 }
-#Table10 td{
-    width: 50px;
-    height: 50px;
+#table10 td{
+    width: 75px;
+    height: 75px;
     vertical-align: top;
     padding: 5px;
-}#Table12
+}#table12
 {
     margin: 20px auto;
     border-spacing: 0;
 }
-#Table12 td{
-    width: 44px;
-    height: 44px;
+#table12 td{
+    width: 75px;
+    height: 75px;
     vertical-align: top;
     padding: 5px;
-}#Table14
+}#table14
 {
     margin: 20px auto;
     border-spacing: 0;
 }
-#Table14 td{
-    width: 46px;
-    height: 46px;
+#table14 td{
+    width: 70px;   
+    height: 70px;
     padding: 4px;
-}#Table16
+}#table16
 {
     margin: 20px auto;
     border-spacing: 0;
 }
-#Table16 td{
-    width: 48px;
-    height: 48px;
+#table16 td{
+    width: 60px;
+    height: 60px;
     vertical-align: top;
     padding: 4px;
-}#Table18
+}#table18
 {
-    margin: 20px auto;
+    margin: 30px auto;
     border-spacing: 0;
 }
-#Table18 td{
-    width: 40px;
-    height: 40px;
+#table18 td{
+    width: 54px;
+    height: 54px;
     vertical-align: top;
     padding: 3px;
 }
@@ -413,24 +628,23 @@ select.toolSetting {
 #filled{
     border: 1px solid black;
 }
-#clues{
-    margin-top: 20px;
-    text-align: center;
+#buttonRow
+{
+    padding-left: 50px;
 }
-#clues p{
-    width: 10%;
-    float: left;
-    padding-top: 8px;
-    font-weight: bold;
-}
-#clues textarea{
-    width: 86%;
-    float: left;
-    margin-bottom: 10px;
-}
-#newVertical, #newHorizontal{
+#buttonRow button
+{
     width: 80%;
-    height: 30px;
+}
+#hint p
+{
+    width: 5%;
+    float: left;
+}
+#hint textarea
+{
+    width: 88%;
+    float: left;
 }
 #vertical
 {
@@ -452,7 +666,13 @@ select.toolSetting {
 #horizontalClueContainer
 {
     width: 47%;
-    float: right;
+    float: left;
+        font-size: 20px; 
+    padding: 15px 0 0 20px;
+}
+#horizontalClueContainer h3
+{
+    text-align: center;
 }
 #verticalClueContainer
 {
@@ -463,27 +683,34 @@ select.toolSetting {
     padding: 15px 0 0 20px;
     font-size: 20px;
     display: inline-block;
-} #horizontalClueContainer{font-size: 20px; padding: 15px 0 0 20px;}
+} 
+#horizontalClueContainer
+{
+
+}
 #clueCount
 {
     width: 5%;
     float: left;
+
 }
 #clueText
 {
     width: 95%;
+    height: 30px;
     float: left;
 }
 #clueDiv{
     width: 100%;
 }
+
 #penmanshipEntry{
     width: 60%;
     margin: 30px 10%;
 }
 #penmanshipEntry input{
     width: 80%;
-    font-size: 20px;
+    font-size: 30px;
     margin-bottom: 20px;
     height: 30px; 
 }
@@ -514,29 +741,41 @@ select.toolSetting {
 {
     width: 90%;;
     margin: 60px auto;
-    height: 45vh;
+    height: 600px;
     border: solid 1px black;
+    padding-top: 10px;
 }
 #drawDiv8
 {
     width: 90%;
     margin: 90px auto;
-    height: 35vh;
+    height: 500px;
     border: solid 1px black;
+    padding-top: 10px;
 }
 #drawDiv10
 {
     width: 90%;
-    margin: 105px auto;
-    height: 26vh;
+    margin: 125px auto;
+    height: 400px;
     border: solid 1px black;
+    padding-top: 10px;
 }
 #drawDiv12
 {
     width: 90%;
     margin: 75px auto;
-    height: 14vh;
+    height: 280px;
     border: solid 1px black;
+    position: relative;
+    bottom: -35px;
+}
+#drawP
+{
+    padding: 10px;
+    font-size: 20px;
+    position: relative;
+    top: -20px;
 }
 #anagramBlock
 {
@@ -573,27 +812,31 @@ select.toolSetting {
 }
 
 #linesArea{
-    margin: 30px auto;
+    margin: 18px auto;
 }
 #penmanshipLines
 {
-    height: 42px;
-    width: 100%;
+    height: 65px;
+    width: 95%;
     border-top: solid 2px black;
     border-bottom: solid 2px black;
-    margin: 15px 0; 
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    margin: 17px auto; 
 }#penmanshipLines20
 {
-    height: 42px;
+    height: 65px;
     width: 46%;
     float: left;
     border-top: solid 2px black;
     border-bottom: solid 2px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
     margin: 0 15px 15px 15px; 
 }
 #penmanshipDots
 {
-    height: 40%;
+    height: 45%;
     width: 100%;
     border-bottom: dashed 1px black;
     float: left;
@@ -604,7 +847,8 @@ select.toolSetting {
     height: 50px;
     display: inline-block;
     position: absolute;
-    font-size: 66px;
+    font-size: 100px;
+    white-space: nowrap;
     font-family: "kg_primary_dots_linedregular";
 }
 #entryWord20
@@ -613,23 +857,25 @@ select.toolSetting {
     width: 50%;
     height: 50px;
     position: absolute;
-    left: 10px;
-    font-size: 66px;
+    left: 15px;
+    font-size: 100px;
     font-family: "kg_primary_dots_linedregular";
 }
 #wordsDiv
 {
     position: absolute;
     width: 100%;
-    top: 30px;
+    top: -23px;
+    padding-left: 30px
 }#wordsDiv20
 {
     position: absolute;
-    top: 30px;
+    top: -21px;
+    padding-left: 10px;
 }
 #toolInstructions{
-    visibility: hidden;
-    position: fixed;
+    display: none;
+    position: absolute;
     width: 40vw;
     top: 80px;
     left: 0;
@@ -670,6 +916,7 @@ select.toolSetting {
     font-weight: normal;
     border: solid 2px white;
     background-color: #2E2D4D;
+        box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.75);
 }
 #toolInstructions div:hover
 {
@@ -677,39 +924,144 @@ select.toolSetting {
     background-color: white;
     cursor: pointer;
 }  
-
-
-
-/*Media Queries*/
-@media screen and (max-width: 1358px)
+#contactRow
 {
-    .container{
-        max-width: 60vw;
-    }    .toolContainer{
-        max-width: 80vw;
-    }
-
-
-}@media screen and (max-width: 1100px)
-{
-    .container
-    {
-        max-width: 80vw;
-    }
+    padding: 10px 40px;
 }
-@media screen and (max-width: 878px)
+#contactRow div
 {
-    .container{
-        max-width: 100vw;
-        padding-top: 0;
-    }    .toolContainer{
-        max-width: 100vw;
-        padding-top: 0;
-    }
+    margin: 20px 4.16%;
+    padding: 0;
+}
+#contactRow h1
+{
+    text-align: center;
+    margin: 0 0 20px 0;
+    width: 100%;
+    height: 68px;
+    padding-top: 10px;
+    color: white;
+}
+#formInput
+{
+    width: 75%;
+    margin-bottom: 20px;
+}
+#contactRow button
+{
+    width: 50%;
+    margin-bottom: 10px;
+}
+#contactForm p
+{
+    font-weight: bold;
+    text-decoration: underline;
+}
+#formColumn
+{
+    background-color: #A9B5BA;
+    box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.75);
+}
+#formColumn h1
+{
+    background-color: #143642;
+}
+#infoColumn
+{
+    box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.75);
+    background-color: #C1B4D0;
+}
+#infoColumn h1
+{
+    background-color: #2E2D4D;
+}
+#otherContainer
+{
+    margin-top: 50px;
+    background-color: #A9B5BA;
+}
+#otherContainer h1
+{
+    background-color: #143642;
+    color: white;
+    padding: 10px 0;
+}
+#otherContainer h3
+{
+    padding: 20px;
+}
+#columnContents
+{
+    padding: 20px;
+    box-shadow: unset;
+}
+#serviceRow
+{
+    background-color: #B3B2BE;
+}
+#serviceRow h1
+{
+    width: 100%;
+    background-color: #2E2D4D;
+    color: white;
+}
+#discoveryRow
+{
+    background-color: #F1BFBD;
+}
+#discoveryRow h1
+{
+    width: 100%;
+    background-color: #DB504A;
+    color: white;
+}
+#serviceRow h2, #discoveryRow h2
+{
+    text-align: center;
+}
+#serviceRow h4, #discoveryRow h4
+{
+    margin: 20px 0;
+}
+#worksheetImg
+{
+    width: 50%;
+}
+/*Media Queries*/
 
-    #worksheetInfo
+@media screen and (max-width: 1200px)
+{
+    #leftBlock
     {
         padding-top: 30px;
     }
+}
+@media screen and (max-width: 992px)
+{
+    #leftBlock
+    {
+        padding-top: 30px; 
+    }
+    #footer img
+    {
+        margin: 0;
+        width: 100%;
+    }
+}
+@media screen and (max-width: 690px)
+{
+    #dropLink
+    {
+        width: 50%;
+        text-align: left;
+    }
+}
+@media screen and (max-width: 460px)
+{
+    #formContainer h1
+    {
+        height: 150px;
+    }
+
 }
 

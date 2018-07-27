@@ -2,7 +2,10 @@
 <html>
 <head>
 	<title>Crossword Puzzle Maker - Classroom Helpers</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="css/styleSheet.css">
+<link rel="icon" href="./img/resources.png">
+
 <style type="text/css" media="print">
 @page {
     size: auto;   /* auto is the initial value */
@@ -12,41 +15,67 @@
 </head>
 <body>
 
-<ul id="navbar">
-  <li><a href="index.html">Home</a></li>
-  <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Tools</a>
-    <div class="dropdown-content">
-      <a href="bingoPage.html">Bingo Maker</a>
-      <a href="wordSearch.html">Word Search</a>
-      <a href="anagrams.html">Anagrams</a>
-      <a href="crossword.html">Crossword Puzzle</a>
-      <a href="penmanship.html">Penmanship Practice</a>
+<div id="navbar" class="header">
+  <a class="btn" href="index.html" id="dropLink">Home</a></li>
+  <div class="dropdown show">
+     <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropLink">Worksheets</a>  
+     <div class="dropdown-menu">
+        <a class="dropdown-item" href="bingo.html">Bingo Maker</a>
+        <a class="dropdown-item" href="wordsearch.html">Word Search</a>
+        <a class="dropdown-item" href="anagrams.html">Anagrams</a>
+        <a class="dropdown-item" href="crossword.html">Crossword Puzzle</a>
+        <a class="dropdown-item" href="penmanship.html">Penmanship Practice</a>
     </div>
-  </li>
-    <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Apps</a>
-    <div class="dropdown-content">
-      <a href="#">Easy Grader</a>
+  </div>
+    <div class="dropdown show">
+     <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropLink">Apps</a>  
+     <div class="dropdown-menu">
+        <a class="dropdown-item" href="https://play.google.com/store/apps/details?id=com.TeacherApps.EZGrader">Easy Grader</a>
     </div>
-  </li>
-  <li><a href="#resources">Other Resources</a>
-</ul>
+  </div>
+    <div class="dropdown show">
+     <a class="btn dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="dropLink">Other Resources</a>  
+     <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Coming soon!</a>
+        <a class="dropdown-item" href="#">Visit My Contact</a>
+        <a class="dropdown-item" href="#">Page If You Would</a>
+        <a class="dropdown-item" href="#">Like To Be A Partner!</a>
+    </div>
+  </div>
+    <a class="btn" href="contactme.html" id="dropLink">Contact me</a></li>
+</div>
 
 <div id="getStartedTools">
 	<h1 id="mainHeader">Crossword Puzzle Maker</h1>
 	<h3 id="subHeader">Create a custom crossword based on your class' vocabulary! Create puzzles with hints and words special to your own class and students</h3>
 	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
 </div>
-<div class="toolContainer">
-  <form id="crosswordForm">
-    <h2 class="toolSetting">Title</h2>
-    <p class="toolSetting">The name of your puzzle! Default is "Crossword Puzzle"</p>
-    <input id="bingoTitle"/>
-    <h2 class="toolSetting">Size</h2>
-      <div id="sizeSetting">
-        <h3 id="sizeText"> Current Size: </h3>
-        <button id="decreaseSize" onclick="return DecreaseForm()"> - </button>
+<div class="container" id="formContainer">
+    <h1>Crossword Puzzles</h1>
+  <div class="row">
+    <div class="col-sm-1">
+      <h2>Title:</h2>
+    </div>
+    <div class="col-sm-11">
+      <p>
+        The title for your page, will appear at the top.
+      </p>
+    </div>
+  </div>
+  <input id="bingoTitle"/>
+  <div class="row" id="borderRow">
+    <div class="col-sm-1">
+      <h2>Size: </h2>
+    </div>
+    <div class="col-sm-11">
+      <p>
+        Choose the size of your puzzle. As you change the size, the form below will increase or decrease.
+      </p>
+    </div>
+      </div>
+    <div class="row">
+      <div class="col-12">
+        <button class="btn-primary" id="sizeButton" onclick="DecreaseForm()">-</button>
         <table id="sizeTable">
           <tr>
             <td id="size1"></td>
@@ -56,34 +85,117 @@
             <td id="size5"></td>
           </tr>
         </table>
-        <button id="increaseSize" onclick="return IncreaseForm()"> + </button>
+        <button class="btn-primary" id="sizeButton" onclick="IncreaseForm()">+</button>
       </div>
-      <div id="entryDiv"></div>
-      <h1 class="toolSetting">Clues</h1>
-      <div class="toolSetting" id="clues">
-        <div id="vertical">
-          <h3>Vertical</h3>
-          <div id="verticalClueGroup">
-            <div id="hint">
-              <p>1</p>
-              <textarea id= "verticalClue"></textarea>
-            </div>
-          </div>
-          <button id="newVertical" onclick="return NewVerticalClue()">Add Clue</button>
-        </div>
-        <div id="horizontal">
-          <h3>Horizontal</h3>
-          <div id="horizontalClueGroup">
-            <div id="hint">
-              <p>1</p>
-              <textarea id="horizontalClue"></textarea>
-            </div>
-          </div>
-          <button id="newHorizontal" onclick="return NewHorizontalClue()">Add Clue</button>
+    </div>
+
+
+  <div class="row" id="borderRow">
+    <div class="col-sm-2">
+      <h2>Word Entry</h2>
+    </div>
+    <div class="col-sm-10">
+      <p>Enter any words you would like to be printed on the lines. The font is a dotted tracable font, and any fields left blank will provide a space with only the guided writing lines.</p>
+    </div>
+  </div>
+  <div id="entryDiv"></div>
+  <div class="row" id="borderRow">
+    <div class="col-sm-1">
+      <h2>Clues</h2>
+    </div>
+    <div class="col-sm-11">
+      <p>After you've filled in your puzzle, enter the corresponding clues down here. You can click the square in the top left of each input on the form to match the clues to the start of a word.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <h2>Vertical Clues</h2>
+    </div>
+    <div class="col-6">
+      <h2>Horizontal Clues</h2>
+    </div>
+  </div>
+    <div class="row" id="buttonRow">
+    <div class="col-3">
+      <button class="btn btn-success" onclick="NewVerticalClue()">Add Clue</button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-danger" onclick="RemoveVerticalClue()">Remove Clue</button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-success" onclick="NewHorizontalClue()" style="margin-left: 20px;">Add Clue</button>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-danger" onclick="RemoveHorizontalClue()">Remove Clue</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <div id="verticalClueGroup">
+        <div id="hint">
+          <p>1</p>
+          <textarea id="verticalClue"></textarea>
         </div>
       </div>
-  </form>
-  <button id="bingoButton" onclick = "PrintCrossword()">Create Puzzle</button>
+    </div>
+    <div class="col-6">
+      <div id="horizontalClueGroup">
+          <div id="hint">
+          <p>1</p>
+          <textarea id="horizontalClue"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <button id="printButton" onclick="PrintCrossword()">Print</button>
+</div>
+<!--Footer-->
+<div class="container-fluid" id="footer">
+  <div class="row" style="margin-bottom: 0;">
+    <div class="col-lg-3" >
+      <a href="contactme.html">
+        <img src="./img/sponsorImg.png"/>
+      </a>
+    </div>
+    <div class="col-lg-6">
+      <h1>Classroom Helpers</h1>
+      <div class="row">
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="index.html">Home</a>
+        </div>
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="worksheets.html">Worksheets</a>
+        </div>
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="#">Apps</a>
+        </div>
+        <div class="col-6 col-md-3" style="border-bottom: solid 2px white;">
+          <a href="contactme.html">Contact</a>
+        </div>
+        <div class="col-6 col-md-3 order-md-7">
+          <a href="https://play.google.com/store/apps/details?id=com.TeacherApps.EZGrader">Easy Grader</a>
+        </div>
+        <div class="col-6 col-md-3 order-md-6" id="footlinks">
+          <a href="bingo.html">Bingo</br></a>
+          <a href="wordsearch.html">Word Seach</br></a>
+          <a href="anagrams.html">Anagrams</br></a>
+          <a href="crossword.html">Crossword</br></a>
+          <a href="penmanship.html">Penmanship</br></a>
+        </div>
+        <div class="col-6 col-md-3" id="footlinks">
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-3">
+      <a href="contactme.html">
+        <img src="./img/sponsorImg.png"/>
+      </a>
+    </div>
+  </div>
+  <div class="container-fluid" id="copyright">
+    <h5>Richards Web Services, 2018 &#169;</h5>
+  </div>
 </div>
 <div id="toolInstructions">
   <h1>How To Use</h1>
@@ -100,6 +212,19 @@
   <div id="instructionButton" onclick="HideInstructions()">Close</div>
 </div>
 <div id="printable"></div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-122217801-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-122217801-1');
+</script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
 <script src="js/crosswordScript.js"></script>
 </body>
 </html>
