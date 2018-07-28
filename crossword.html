@@ -75,7 +75,7 @@
       </div>
     <div class="row">
       <div class="col-12">
-        <button class="btn-primary" id="sizeButton1">-</button>
+        <button class="btn-primary" class="sizeButton" id="sizeButton1">-</button>
         <table id="sizeTable">
           <tr>
             <td id="size1"></td>
@@ -85,7 +85,7 @@
             <td id="size5"></td>
           </tr>
         </table>
-        <button class="btn-primary" id="sizeButton2">+</button>
+        <button class="btn-primary" class="sizeButton" id="sizeButton2">+</button>
       </div>
     </div>
 
@@ -117,16 +117,16 @@
   </div>
     <div class="row" id="buttonRow">
     <div class="col-3">
-      <button class="btn btn-success" onclick="NewVerticalClue()">Add Clue</button>
+      <button class="btn btn-success" id="newVerticalClue">Add Clue</button>
     </div>
     <div class="col-3">
-      <button class="btn btn-danger" onclick="RemoveVerticalClue()">Remove Clue</button>
+      <button class="btn btn-danger" id="removeVerticalClue">Remove Clue</button>
     </div>
     <div class="col-3">
-      <button class="btn btn-success" onclick="NewHorizontalClue()" style="margin-left: 20px;">Add Clue</button>
+      <button class="btn btn-success" id="newHorizontalClue" style="margin-left: 20px;">Add Clue</button>
     </div>
     <div class="col-3">
-      <button class="btn btn-danger" onclick="RemoveHorizontalClue()">Remove Clue</button>
+      <button class="btn btn-danger" id="removeHorizontalClue">Remove Clue</button>
     </div>
   </div>
   <div class="row">
@@ -148,7 +148,7 @@
     </div>
   </div>
 
-    <button id="printButton" onclick="PrintCrossword()">Print</button>
+    <button id="printButton">Print</button>
 </div>
 <!--Footer-->
 <div class="container-fluid" id="footer">
@@ -209,7 +209,7 @@
   <h3>Placing Numbers</h3>
   <p>To place a number in a square for its' corresponding clue, click the square in the top-left on the input. Each click will increment the number contained by one, and will reset after 9.
      If you want to create puzzles with even more than nine words in each direction, shoot me an email and we will make it happen! (Check the contact page)</p>
-  <div id="instructionButton" onclick="HideInstructions()">Close</div>
+  <div id="instructionButton">Close</div>
 </div>
 <div id="printable"></div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -225,6 +225,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-<script src="js/crosswordScript.js"></script>
+<script src="js/crosswordQuery.js"></script>
 </body>
 </html>
