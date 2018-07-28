@@ -288,7 +288,7 @@ h1
     bottom: 0;
     left: 35%;
 }
-#worksheetLink div:hover
+#worksheetLink div:hover, .bingoButt:hover
 {
     cursor: pointer;
     background-color: #F1BFBD;
@@ -300,7 +300,24 @@ h1
     border: solid 3px #DB504A;
     background-color: #DB504A;
 }
+.bingoButt
+{
+    border: solid 3px #DB504A;
+    background-color: #DB504A;
+}
 #appButton div:hover
+{
+    cursor: pointer;
+    background-color: #B8B7B8;
+    color: black;
+    font-style: bold
+}
+.anagramButt
+{
+    border: solid 3px #3D3B3C;
+    background-color: #3D3B3C;
+}
+.anagramButt:hover
 {
     cursor: pointer;
     background-color: #B8B7B8;
@@ -324,6 +341,18 @@ h1
     border: solid 3px #4F6D7A;
     background-color: #4F6D7A;
 }
+.wordButt:hover
+{
+    cursor: pointer;
+    background-color: #BFC9CE;
+    color: black;
+    font-style: bold
+}
+.wordButt
+{
+    border: solid 3px #4F6D7A;
+    background-color: #4F6D7A;
+}
 #contactLink div:hover
 {
     cursor: pointer;
@@ -332,6 +361,18 @@ h1
     font-style: bold
 }
 #contactLink div
+{
+    border: solid 3px #56A3A6;
+    background-color: #56A3A6;
+}
+.crossButt:hover
+{
+    cursor: pointer;
+    background-color: #C1DDDE;
+    color: black;
+    font-style: bold
+}
+.crossButt
 {
     border: solid 3px #56A3A6;
     background-color: #56A3A6;
