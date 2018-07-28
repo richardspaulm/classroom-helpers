@@ -50,7 +50,7 @@
 <div id="getStartedTools">
 	<h1 id="mainHeader">Custom Penmanship Worksheets</h1>
 	<h3 id="subHeader">Help your students improve their handwriting with focused practice, and relevant vocabulary.</h3>
-	<div id="scrollButtonTools" onclick="ShowInstructions()">Instructions</div>
+	<div id="scrollButtonTools">Instructions</div>
 </div>
 <div class="container" id="formContainer">
     <h1>Penmanship Practice</h1>
@@ -76,7 +76,7 @@
     </div>
 
   </div>
-  <select id="wordSearchSizeSelect" onchange="onSizeChanged()">
+  <select id="wordSearchSizeSelect">
     <option value="14" selected>14 Lines</option>
     <option value="28">28 Words</option>
   </select>
@@ -90,7 +90,7 @@
   </div>
       <div id="entryDiv"></div>
 
-    <button id="printButton" onclick="RandomGrams()">Print</button>
+    <button id="printButton">Print</button>
 </div>
 <!--Footer-->
 <div class="container-fluid" id="footer">
@@ -148,7 +148,7 @@
    the sheet into two columns of lines (best for single words).</p>
   <h3>Entering Words</h3>
   <p>The lines on the form represent where they will appear on the paper. To allow students a blank line to copy a word or sentence, just leave it blank!</p>
-     <div id="instructionButton" onclick="HideInstructions()">Close</div>
+     <div id="instructionButton">Close</div>
 </div>
 <div id="printable"></div>
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -164,6 +164,6 @@
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>  
-<script src="js/penmanshipScript.js"></script>
+<script src="js/penmanshipQuery.js"></script>
 </body>
 </html>
