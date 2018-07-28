@@ -463,7 +463,8 @@ h1
     margin: 20px;
     text-decoration: none;
     line-height: 60px;
-    width: 100%;
+    width: 90%;
+    text-align: left;
 }
 .randomPrintable{
     height: 325mm;
@@ -811,7 +812,7 @@ table#table10
     margin: 20px;
     text-decoration: none;
     line-height: 60px;
-    width: 100%;
+    width: 90%;
 }
 
 #linesArea{
