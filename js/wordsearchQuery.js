@@ -32,7 +32,7 @@ $("#randomRadio, #blankRadio").click(function(sender){
 /*Size Select*/
 var sizeSelect = $("#wordSearchSizeSelect")
 sizeSelect.change(function(){
-	var puzzleSize = $("#wordSearchSizeSelect option:selected").val();
+	puzzleSize = $("#wordSearchSizeSelect option:selected").val();
 });
 
 /*Textarea Word Counter*/
